@@ -28,6 +28,10 @@ class Make extends MakeBase
         'tagcompvalor' => ['class' => Tags\CompValor::class, 'type' => 'multiple', 'occurrence' => [1, 999]],
         'tagicms' => ['class' => Tags\Icms::class, 'type' => 'single', 'occurrence' => [0, 1]],
         'tagicmsuffim' => ['class' => Tags\IcmsUfFim::class, 'type' => 'single', 'occurrence' => [0, 1]],
+        'tagibscbs' => ['class' => Tags\IBSCBS::class, 'type' => 'single', 'occurrence' => [0, 1]],
+        'tagibscbstribregular' => ['class' => Tags\IBSCBSTribRegular::class, 'type' => 'single', 'occurrence' => [0, 1]],
+        'tagtribcompragov' => ['class' => Tags\TribCompraGov::class, 'type' => 'single', 'occurrence' => [0, 1]],
+        'taggestornocred' => ['class' => Tags\EstornoCred::class, 'type' => 'single', 'occurrence' => [0, 1]],
         'tagpag' => ['class' => Tags\Pag::class, 'type' => 'multiple', 'occurrence' => [1, 10]],
         'tagautxml' => ['class' => Tags\AutXML::class, 'type' => 'multiple', 'occurrence' => [0, 10]],
         'taginfadic' => ['class' => Tags\InfAdic::class, 'type' => 'single', 'occurrence' => [0, 1]],
@@ -148,6 +152,11 @@ class Make extends MakeBase
                 false,
                 ''
             );
+            $this->appendNodeToParent($imp, $this->ibscbs);
+            $this->appendNodeToParent($imp, $this->ibscbstribregular);
+            $this->appendNodeToParent($imp, $this->tribcompragov);
+            $this->appendNodeToParent($imp, $this->gestornocred);
+
             //cria imp/ICMSUFFIM
             $this->appendNodeToParent($imp, $this->icmsuffim);
             $this->dom->appChild($infBPe, $imp);
