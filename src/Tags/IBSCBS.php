@@ -20,7 +20,7 @@ class IBSCBS extends Tag implements TagInterface
     protected $possible = [
         'CST' => [
             'type' => 'string',
-            'regex' => '^[0-9]{2}$',
+            'regex' => '^[0-9]{3}$',
             'position' => 'node',
             'required' => true,
             'info' => 'Código de Situação Tributária do IBS e CBS (CST)',
@@ -28,7 +28,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'cClassTrib' => [
             'type' => 'string',
-            'regex' => '^[0-9]{3}$',
+            'regex' => '^[0-9]{6}$',
             'position' => 'node',
             'required' => true,
             'info' => 'Código de Classificação Tributária do IBS e CBS (cClassTrib)',
@@ -36,7 +36,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'vBC' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Base de cálculo do IBS e CBS (vBC)',
@@ -46,7 +46,7 @@ class IBSCBS extends Tag implements TagInterface
         // Grupo gIBSUF
         'gIBSUF_pIBSUF' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Alíquota do IBS de competência das UF',
@@ -54,7 +54,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gIBSUF_pDif' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Percentual do diferimento (pDif)',
@@ -62,7 +62,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gIBSUF_vDif' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor do diferimento (vDif)',
@@ -70,7 +70,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gIBSUF_vDevTrib' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor do tributo devolvido (vDevTrib)',
@@ -78,7 +78,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gIBSUF_pRedAliq' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Percentual da redução de alíquota (pRedAliq)',
@@ -86,7 +86,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gIBSUF_pAliqEfet' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Alíquota efetiva do IBS de competência das UF (pAliqEfet)',
@@ -94,7 +94,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gIBSUF_vIBSUF' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => true,
             'info' => 'Valor do IBS de competência da UF (vIBSUF)',
@@ -104,7 +104,7 @@ class IBSCBS extends Tag implements TagInterface
         // Grupo gIBSMun
         'gIBSMun_pIBSMun' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Alíquota do IBS de competência do Município (pIBSMun)',
@@ -112,7 +112,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gIBSMun_pDif' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Percentual do diferimento (pDif)',
@@ -120,7 +120,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gIBSMun_vDif' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor do diferimento (vDif)',
@@ -128,7 +128,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gIBSMun_vDevTrib' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor do tributo devolvido (vDevTrib)',
@@ -136,7 +136,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gIBSMun_pRedAliq' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Percentual da redução de alíquota (pRedAliq)',
@@ -144,7 +144,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gIBSMun_pAliqEfet' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Alíquota Efetiva do IBS de competência do Município (pAliqEfet)',
@@ -152,7 +152,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gIBSMun_vIBSMun' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor do IBS de competência do Município (vIBSMun)',
@@ -161,7 +161,7 @@ class IBSCBS extends Tag implements TagInterface
 
         'vIBS' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => true,
             'info' => 'Valor total do IBS (soma de vIBSUF + vIBSMun)',
@@ -171,7 +171,7 @@ class IBSCBS extends Tag implements TagInterface
         // Grupo gCBS
         'gCBS_pCBS' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Alíquota da CBS (pCBS)',
@@ -179,7 +179,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gCBS_pDif' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Percentual do diferimento (pDif)',
@@ -187,7 +187,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gCBS_vDif' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor do diferimento (vDif)',
@@ -195,7 +195,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gCBS_vDevTrib' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor do tributo devolvido (vDevTrib)',
@@ -203,7 +203,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gCBS_pRedAliq' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Percentual da redução de alíquota (pRedAliq)',
@@ -211,7 +211,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gCBS_pAliqEfet' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Alíquota Efetiva da CBS aplicada à BC (pAliqEfet)',
@@ -219,7 +219,7 @@ class IBSCBS extends Tag implements TagInterface
         ],
         'gCBS_vCBS' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor da CBS (vCBS)',
@@ -229,7 +229,7 @@ class IBSCBS extends Tag implements TagInterface
         // total
         'vTotDFe' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor total do documento fiscal eletrônico (vTotDFe)',

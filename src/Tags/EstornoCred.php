@@ -20,7 +20,7 @@ class EstornoCred extends Tag implements TagInterface
     protected $possible = [
         'vIBSEstCred' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor do crédito de IBS Estadual (vIBSEstCred)',
@@ -29,7 +29,7 @@ class EstornoCred extends Tag implements TagInterface
 
         'vCBSEstCred' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor do crédito de CBS Estadual (vCBSEstCred)',

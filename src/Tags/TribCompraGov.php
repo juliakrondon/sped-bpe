@@ -18,55 +18,49 @@ class TribCompraGov extends Tag implements TagInterface
     protected $after = '';
     protected $before = '';
     protected $possible = [
-
         'pAliqIBSUF' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Alíquota do IBS de competência da UF (pAliqIBSUF)',
             'format' => '3v2-4'
         ],
-
         'vTribIBSUF' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor do IBS devido à UF (vTribIBSUF)',
             'format' => '13v2'
         ],
-
         'pAliqIBSMun' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Alíquota do IBS de competência do município (pAliqIBSMun)',
             'format' => '3v2-4'
         ],
-
         'vTribIBSMun' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor do IBS devido ao município (vTribIBSMun)',
             'format' => '13v2'
         ],
-
         'pAliqCBS' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Alíquota da CBS aplicada à BC (pAliqCBS)',
             'format' => '3v2-4'
         ],
-
         'vTribCBS' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor da CBS (vTribCBS)',
@@ -79,7 +73,7 @@ class TribCompraGov extends Tag implements TagInterface
      * DOMElement constructor
      * @return \DOMElement
      */
-    
+
     public function taggTribCompraGov()
     {
         $std = $this->std;

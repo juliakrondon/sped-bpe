@@ -22,25 +22,25 @@ class IBSCBSTribRegular extends Tag implements TagInterface
 
         'CSTReg' => [
             'type' => 'string',
-            'regex' => '^[0-9]{2,3}$',
+            'regex' => '^[0-9]{3}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Código da Situação Tributária do Regime (CSTReg)',
-            'format' => '3'
+            'format' => ''
         ],
 
         'cClassTribReg' => [
             'type' => 'string',
-            'regex' => '^[0-9]{1,4}$',
+            'regex' => '^[0-9]{6}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Classificação Tributária do Regime (cClassTribReg)',
-            'format' => '4'
+            'format' => ''
         ],
 
         'pAliqEfetRegIBSUF' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Alíquota Efetiva do IBS Estadual no Regime (pAliqEfetRegIBSUF)',
@@ -49,7 +49,7 @@ class IBSCBSTribRegular extends Tag implements TagInterface
 
         'vTribRegIBSUF' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor do Tributo IBS Estadual no Regime (vTribRegIBSUF)',
@@ -58,7 +58,7 @@ class IBSCBSTribRegular extends Tag implements TagInterface
 
         'pAliqEfetRegIBSMun' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Alíquota Efetiva do IBS Municipal no Regime (pAliqEfetRegIBSMun)',
@@ -67,7 +67,7 @@ class IBSCBSTribRegular extends Tag implements TagInterface
 
         'vTribRegIBSMun' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor do Tributo IBS Municipal no Regime (vTribRegIBSMun)',
@@ -76,7 +76,7 @@ class IBSCBSTribRegular extends Tag implements TagInterface
 
         'pAliqEfetRegCBS' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,3}(\.[0-9]{2,4})?$',
+            'regex' => '^[0-9]{1,3}\.[0-9]{2,4}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Alíquota Efetiva da CBS no Regime (pAliqEfetRegCBS)',
@@ -85,7 +85,7 @@ class IBSCBSTribRegular extends Tag implements TagInterface
 
         'vTribRegCBS' => [
             'type' => 'numeric',
-            'regex' => '^[0-9]{1,13}(\.[0-9]{2})?$',
+            'regex' => '^[0-9]{1,13}\.[0-9]{2}$',
             'position' => 'node',
             'required' => false,
             'info' => 'Valor da CBS no Regime (vTribRegCBS)',
