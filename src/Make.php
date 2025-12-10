@@ -10,7 +10,7 @@ class Make extends MakeBase
     protected $rootname = 'BPe';
     protected $versao = '1.00';
     protected $xmlns = 'http://www.portalfiscal.inf.br/bpe';
-    
+
     protected $available = [
         'taginfbpe' => ['class' => Tags\InfBpe::class, 'type' => 'single', 'occurrence' => [0, 1]],
         'tagide' => ['class' => Tags\Ide::class, 'type' => 'single', 'occurrence' => [1, 1]],
@@ -44,7 +44,7 @@ class Make extends MakeBase
         parent::__construct();
         $this->createEmptyProperties();
     }
-    
+
     /**
      * Convert all subclasse to DOMNodes and creates entire XML
      * NOTE: append order is very important
@@ -99,8 +99,8 @@ class Make extends MakeBase
                     $buildId
                 );
             }
-            
-            
+
+
             //caso não seja criada a tag infBPe
             if (empty($this->infbpe)) {
                 throw new \Exception('A Tag infBPE é obrigatória.');
@@ -137,7 +137,7 @@ class Make extends MakeBase
             $imp = $this->dom->createElement('imp');
             //cria imp/ICMS
             $this->appendNodeToParent($imp, $this->icms);
-            
+
             $this->dom->addChild(
                 $imp,
                 'vTotTrib',
@@ -152,12 +152,27 @@ class Make extends MakeBase
                 false,
                 ''
             );
-            $this->appendNodeToParent($imp, $this->ibscbs);
-            $this->appendNodeToParent($imp, $this->ibscbstribregular);
-            $this->appendNodeToParent($imp, $this->tribcompragov);
-            $this->appendNodeToParent($imp, $this->gestornocred);
+            if (!empty($this->ibscbs)) {
+                $this->ibscbs = $this->ibscbs->toNode($this->dom);
 
-            //cria imp/ICMSUFFIM
+                if (!empty($this->gestornocred)) {
+                    $estorno = $this->gestornocred->toNode($this->dom);
+                    $this->dom->appChild($this->ibscbs, $estorno);
+                }
+
+                if (!empty($this->tribcompragov)) {
+                    $compraGov = $this->tribcompragov->toNode($this->dom);
+                    $this->dom->appChild($this->ibscbs, $compraGov);
+                }
+
+                if (!empty($this->ibscbstribregular)) {
+                    $tribReg = $this->ibscbstribregular->toNode($this->dom);
+                    $this->dom->appChild($this->ibscbs, $tribReg);
+                }
+
+                $this->dom->appChild($imp, $this->ibscbs);
+            }
+
             $this->appendNodeToParent($imp, $this->icmsuffim);
             $this->dom->appChild($infBPe, $imp);
             //cria pag
@@ -179,7 +194,7 @@ class Make extends MakeBase
             throw new \Exception($e);
         }
     }
-    
+
     /**
      * Append tags in parent with subtags
      * @param \DOMElement $parent
@@ -216,3 +231,4 @@ class Make extends MakeBase
         }
     }
 }
+
